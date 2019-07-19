@@ -20,9 +20,9 @@ final class EventListRouter {
 extension EventListRouter {
     @objc
     func navigateToNewEvent() {
-        let newEvent = UIViewController()
-        newEvent.title = "New"
-        newEvent.view.backgroundColor = .green
+        guard let newEvent = NewEventConfigurator().configureNewEventModule() else {
+            return
+        }
         
         viewController?.navigationController?.pushViewController(newEvent, animated: true)
     }

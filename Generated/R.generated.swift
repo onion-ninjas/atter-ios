@@ -42,12 +42,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     /// Storyboard `EventList`.
     static let eventList = _R.storyboard.eventList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    /// Storyboard `NewEvent`.
+    static let newEvent = _R.storyboard.newEvent()
     
     /// `UIStoryboard(name: "EventList", bundle: ...)`
     static func eventList(_: Void = ()) -> UIKit.UIStoryboard {
@@ -57,6 +59,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
+    }
+    
+    /// `UIStoryboard(name: "NewEvent", bundle: ...)`
+    static func newEvent(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.newEvent)
     }
     
     fileprivate init() {}
@@ -102,6 +109,7 @@ struct _R: Rswift.Validatable {
     static func validate() throws {
       try eventList.validate()
       try launchScreen.validate()
+      try newEvent.validate()
     }
     
     struct eventList: Rswift.StoryboardResourceType, Rswift.Validatable {
@@ -131,6 +139,24 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct newEvent: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let name = "NewEvent"
+      let newEventViewController = StoryboardViewControllerResource<NewEventViewController>(identifier: "NewEventViewController")
+      
+      func newEventViewController(_: Void = ()) -> NewEventViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newEventViewController)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.newEvent().newEventViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newEventViewController' could not be loaded from storyboard 'NewEvent' as 'NewEventViewController'.") }
       }
       
       fileprivate init() {}
