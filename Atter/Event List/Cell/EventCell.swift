@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import atter_logic
 
 class EventCell: UITableViewCell {
     
@@ -14,9 +15,9 @@ class EventCell: UITableViewCell {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var attendeesLabel: UILabel!
     
-    func setup(name: String, date: String, attendees: Int) {
-        nameLabel.text = name
-        dateLabel.text = date
-        attendeesLabel.text = "number of attendees: \(attendees)"
+    func setup(with event: Event) {
+        nameLabel.text = event.name
+        dateLabel.text = event.eventDate
+        attendeesLabel.text = "number of attendees: \(event.attendeesCount)"
     }
 }

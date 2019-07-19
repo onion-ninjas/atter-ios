@@ -10,6 +10,8 @@
 		8F74564022E1B050003B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F74563F22E1B050003B9C1D /* AppDelegate.swift */; };
 		8F74564722E1B051003B9C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F74564622E1B051003B9C1D /* Assets.xcassets */; };
 		8F74564A22E1B051003B9C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F74564822E1B051003B9C1D /* LaunchScreen.storyboard */; };
+		8F8E659C22E24BA200881D5C /* atter_logic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E659B22E24BA100881D5C /* atter_logic.framework */; };
+		8F8E659D22E24BA200881D5C /* atter_logic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E659B22E24BA100881D5C /* atter_logic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8FD7C8E522E21B050019B532 /* AtterTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E222E21B050019B532 /* AtterTabBarRouter.swift */; };
 		8FD7C8E622E21B050019B532 /* AtterTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E322E21B050019B532 /* AtterTabBarViewController.swift */; };
 		8FD7C8E722E21B050019B532 /* AtterTabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E422E21B050019B532 /* AtterTabBarConfigurator.swift */; };
@@ -27,6 +29,20 @@
 		E314BD30BBAF1CE6474593C7 /* Pods_Atter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3B08D871FB59595CB29583 /* Pods_Atter.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		8F8E659E22E24BA200881D5C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8F8E659D22E24BA200881D5C /* atter_logic.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		1A3B08D871FB59595CB29583 /* Pods_Atter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Atter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D02AB8ECD98F92E430A8B34 /* Pods-Atter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atter.release.xcconfig"; path = "Target Support Files/Pods-Atter/Pods-Atter.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +51,7 @@
 		8F74564622E1B051003B9C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F74564922E1B051003B9C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F74564B22E1B051003B9C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F8E659B22E24BA100881D5C /* atter_logic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = atter_logic.framework; path = "atter-logic/atter-logic/build/xcode-frameworks/atter_logic.framework"; sourceTree = "<group>"; };
 		8FD7C8E222E21B050019B532 /* AtterTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarRouter.swift; sourceTree = "<group>"; };
 		8FD7C8E322E21B050019B532 /* AtterTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarViewController.swift; sourceTree = "<group>"; };
 		8FD7C8E422E21B050019B532 /* AtterTabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarConfigurator.swift; sourceTree = "<group>"; };
@@ -57,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F8E659C22E24BA200881D5C /* atter_logic.framework in Frameworks */,
 				E314BD30BBAF1CE6474593C7 /* Pods_Atter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -84,6 +102,7 @@
 		8F74563322E1B050003B9C1D = {
 			isa = PBXGroup;
 			children = (
+				8F8E659B22E24BA100881D5C /* atter_logic.framework */,
 				8F74563E22E1B050003B9C1D /* Atter */,
 				8F74563D22E1B050003B9C1D /* Products */,
 				05A2C2869DB0ADC05ABE9CAF /* Pods */,
@@ -204,12 +223,14 @@
 			buildConfigurationList = 8F74564E22E1B051003B9C1D /* Build configuration list for PBXNativeTarget "Atter" */;
 			buildPhases = (
 				870EFA60EB091353C50386AF /* [CP] Check Pods Manifest.lock */,
+				8F8E659F22E24BC900881D5C /* Run gradlew */,
 				8FD7C8E822E21C060019B532 /* Run R.swift */,
 				8F74563822E1B050003B9C1D /* Sources */,
 				8F74563922E1B050003B9C1D /* Frameworks */,
 				8F74563A22E1B050003B9C1D /* Resources */,
 				8F74565322E1B14D003B9C1D /* Run SwiftLint */,
 				CCDAAFCDA4811C812C1DC979 /* [CP] Embed Pods Frameworks */,
+				8F8E659E22E24BA200881D5C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -307,6 +328,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		8F8E659F22E24BC900881D5C /* Run gradlew */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run gradlew";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$SRCROOT/atter-logic/atter-logic/build/xcode-frameworks\"\n./gradlew :atter-logic:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
 		8FD7C8E822E21C060019B532 /* Run R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -505,6 +544,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WB5LCV9PU6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/atter-logic/atter-logic/build/xcode-frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Atter/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -525,6 +568,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WB5LCV9PU6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/atter-logic/atter-logic/build/xcode-frameworks",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/Atter/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (

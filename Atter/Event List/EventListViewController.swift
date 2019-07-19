@@ -53,7 +53,7 @@ extension EventListViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-        cell.setup(name: event.name, date: event.date, attendees: event.attendees)
+        cell.setup(with: event)
         
         return cell
     }
