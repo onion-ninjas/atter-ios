@@ -9,24 +9,24 @@
 import UIKit
 
 final class AtterTabBarConfigurator {
-    func configureAtterTabBarModule() -> AtterTabBarViewController {
+    func configureAtterTabBarModule() -> AtterTabBarViewController? {
         let viewController: AtterTabBarViewController = AtterTabBarViewController()
         let router: AtterTabBarRouter = AtterTabBarRouter(viewController: viewController)
-//        let viewModel: AtterTabBarViewModel = container.forceResolve(arguments: viewController as AtterTabBarPresenter)
         
         viewController.router = router
-//        viewController.viewModel = viewModel
+        
+        guard let events = EventListConfigurator().configureEventListModule() else {
+            return nil
+        }
+        
+        events.tabBarItem.title = "Events"
         
         //TODO: move view controllers configuration to separate modules
-        let eventsVC = UIViewController()
-        eventsVC.view.backgroundColor = .white
-        eventsVC.tabBarItem.title = "Events"
-        
         let peopleVC = UIViewController()
         peopleVC.view.backgroundColor = .brown
         peopleVC.tabBarItem.title = "People"
         
-        viewController.viewControllers = [eventsVC, peopleVC]
+        viewController.viewControllers = [events, peopleVC]
         
         return viewController
     }

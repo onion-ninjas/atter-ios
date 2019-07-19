@@ -9,8 +9,5 @@
 import UIKit
 
 final class AtterTabBarViewController: UITabBarController {
-//    var viewModel: AtterTabBarViewModel?
     var router: AtterTabBarRouter?
 }
-
-//extension AtterTabBarViewController: AtterTabBarPresenter {}

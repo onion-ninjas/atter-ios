@@ -16,10 +16,43 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 1 storyboards.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `EventCell`.
+    static let eventCell = _R.nib._EventCell()
+    
+    /// `UINib(name: "EventCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.eventCell) instead")
+    static func eventCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.eventCell)
+    }
+    
+    static func eventCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventCell? {
+      return R.nib.eventCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventCell
+    }
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `EventCell`.
+    static let eventCell: Rswift.ReuseIdentifier<EventCell> = Rswift.ReuseIdentifier(identifier: "EventCell")
+    
+    fileprivate init() {}
+  }
+  
+  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
   struct storyboard {
+    /// Storyboard `EventList`.
+    static let eventList = _R.storyboard.eventList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
+    
+    /// `UIStoryboard(name: "EventList", bundle: ...)`
+    static func eventList(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.eventList)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -47,9 +80,46 @@ struct _R: Rswift.Validatable {
     try storyboard.validate()
   }
   
+  struct nib {
+    struct _EventCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = EventCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "EventCell"
+      let name = "EventCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try eventList.validate()
       try launchScreen.validate()
+    }
+    
+    struct eventList: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let eventListViewController = StoryboardViewControllerResource<EventListViewController>(identifier: "EventListViewController")
+      let name = "EventList"
+      
+      func eventListViewController(_: Void = ()) -> EventListViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: eventListViewController)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.eventList().eventListViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'eventListViewController' could not be loaded from storyboard 'EventList' as 'EventListViewController'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
