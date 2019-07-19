@@ -8,6 +8,7 @@ project 'Atter'
 
 def shared_pods
   pod 'SwiftLint', '0.34.0'
+  pod 'R.swift', '5.0.3'
 end
 
 target :'Atter' do

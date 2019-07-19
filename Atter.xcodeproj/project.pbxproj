@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		8F74564022E1B050003B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F74563F22E1B050003B9C1D /* AppDelegate.swift */; };
 		8F74564722E1B051003B9C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F74564622E1B051003B9C1D /* Assets.xcassets */; };
 		8F74564A22E1B051003B9C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F74564822E1B051003B9C1D /* LaunchScreen.storyboard */; };
+		8FD7C8E522E21B050019B532 /* AtterTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E222E21B050019B532 /* AtterTabBarRouter.swift */; };
+		8FD7C8E622E21B050019B532 /* AtterTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E322E21B050019B532 /* AtterTabBarViewController.swift */; };
+		8FD7C8E722E21B050019B532 /* AtterTabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E422E21B050019B532 /* AtterTabBarConfigurator.swift */; };
+		8FD7C8EB22E21C880019B532 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8EA22E21C880019B532 /* R.generated.swift */; };
+		8FD7C8EE22E21D080019B532 /* RootRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8ED22E21D080019B532 /* RootRouter.swift */; };
 		E314BD30BBAF1CE6474593C7 /* Pods_Atter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3B08D871FB59595CB29583 /* Pods_Atter.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +26,11 @@
 		8F74564622E1B051003B9C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F74564922E1B051003B9C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F74564B22E1B051003B9C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FD7C8E222E21B050019B532 /* AtterTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarRouter.swift; sourceTree = "<group>"; };
+		8FD7C8E322E21B050019B532 /* AtterTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarViewController.swift; sourceTree = "<group>"; };
+		8FD7C8E422E21B050019B532 /* AtterTabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarConfigurator.swift; sourceTree = "<group>"; };
+		8FD7C8EA22E21C880019B532 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Generated/R.generated.swift; sourceTree = SOURCE_ROOT; };
+		8FD7C8ED22E21D080019B532 /* RootRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootRouter.swift; sourceTree = "<group>"; };
 		984D26E540D2C3B37C439E9A /* Pods-Atter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atter.debug.xcconfig"; path = "Target Support Files/Pods-Atter/Pods-Atter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -74,6 +84,9 @@
 		8F74563E22E1B050003B9C1D /* Atter */ = {
 			isa = PBXGroup;
 			children = (
+				8FD7C8EC22E21CE40019B532 /* Root */,
+				8FD7C8E922E21C380019B532 /* Generated */,
+				8FD7C8D322E21A980019B532 /* Tab Bar */,
 				8F74565622E1B1A4003B9C1D /* Shared */,
 				8F74565522E1B19C003B9C1D /* Supporting Files */,
 				8F74565422E1B191003B9C1D /* Resources */,
@@ -114,6 +127,32 @@
 			path = Delegates;
 			sourceTree = "<group>";
 		};
+		8FD7C8D322E21A980019B532 /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				8FD7C8E222E21B050019B532 /* AtterTabBarRouter.swift */,
+				8FD7C8E322E21B050019B532 /* AtterTabBarViewController.swift */,
+				8FD7C8E422E21B050019B532 /* AtterTabBarConfigurator.swift */,
+			);
+			path = "Tab Bar";
+			sourceTree = "<group>";
+		};
+		8FD7C8E922E21C380019B532 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				8FD7C8EA22E21C880019B532 /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		8FD7C8EC22E21CE40019B532 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				8FD7C8ED22E21D080019B532 /* RootRouter.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,10 +161,12 @@
 			buildConfigurationList = 8F74564E22E1B051003B9C1D /* Build configuration list for PBXNativeTarget "Atter" */;
 			buildPhases = (
 				870EFA60EB091353C50386AF /* [CP] Check Pods Manifest.lock */,
+				8FD7C8E822E21C060019B532 /* Run R.swift */,
 				8F74563822E1B050003B9C1D /* Sources */,
 				8F74563922E1B050003B9C1D /* Frameworks */,
 				8F74563A22E1B050003B9C1D /* Resources */,
 				8F74565322E1B14D003B9C1D /* Run SwiftLint */,
+				CCDAAFCDA4811C812C1DC979 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -222,6 +263,43 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
+		8FD7C8E822E21C060019B532 /* Run R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Run R.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Generated/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Generated/R.generated.swift\"\n";
+		};
+		CCDAAFCDA4811C812C1DC979 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Atter/Pods-Atter-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Atter/Pods-Atter-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Atter/Pods-Atter-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -230,6 +308,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F74564022E1B050003B9C1D /* AppDelegate.swift in Sources */,
+				8FD7C8E622E21B050019B532 /* AtterTabBarViewController.swift in Sources */,
+				8FD7C8EB22E21C880019B532 /* R.generated.swift in Sources */,
+				8FD7C8E522E21B050019B532 /* AtterTabBarRouter.swift in Sources */,
+				8FD7C8EE22E21D080019B532 /* RootRouter.swift in Sources */,
+				8FD7C8E722E21B050019B532 /* AtterTabBarConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
