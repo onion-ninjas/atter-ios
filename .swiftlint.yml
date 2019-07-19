@@ -1,0 +1,42 @@
+disabled_rules:
+ - void_return
+ - identifier_name
+ - trailing_whitespace
+opt_in_rules:
+  - anyobject_protocol
+  - closure_spacing
+  - collection_alignment
+  - conditional_returns_on_newline
+  - convenience_type
+  - cyclomatic_complexity
+  - discouraged_object_literal
+  - unused_declaration
+
+included:
+ - Atter
+
+line_length:
+  - 150
+  - 180
+
+type_body_length:
+  - 200 #warning
+  - 300 #error
+
+file_length:
+  - 350
+  - 400
+
+type_name: 
+  min_length: 3
+  max_length:
+    warning: 40
+    error: 50
+
+nesting:
+  type_level: 3
+  statement_level: 3
+
+function_body_length:
+- 50 #warning
+- 60 #error
