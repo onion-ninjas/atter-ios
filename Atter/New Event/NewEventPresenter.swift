@@ -6,4 +6,10 @@
 //  Copyright (c) 2019 Patryk Mieszała. All rights reserved.
 //
 
-protocol NewEventPresenter: AnyObject { }
+import Foundation
+
+protocol NewEventPresenter: AnyObject {
+    func setSaveButton(enabled: Bool)
+    func display(date: String)
+    func dismiss()
+}

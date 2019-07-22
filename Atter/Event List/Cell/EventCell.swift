@@ -17,7 +17,12 @@ class EventCell: UITableViewCell {
     
     func setup(with event: Event) {
         nameLabel.text = event.name
-        dateLabel.text = event.eventDate
+        
+        let df = DateFormatter()
+        df.dateStyle = .full
+        df.timeStyle = .none
+        
+        dateLabel.text = df.string(from: event.eventDate.date)
         attendeesLabel.text = "number of attendees: \(event.attendeesCount)"
     }
 }

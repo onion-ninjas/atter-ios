@@ -16,10 +16,12 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
     /// Nib `EventCell`.
     static let eventCell = _R.nib._EventCell()
+    /// Nib `NewEventTitleCell`.
+    static let newEventTitleCell = _R.nib._NewEventTitleCell()
     
     /// `UINib(name: "EventCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.eventCell) instead")
@@ -27,8 +29,18 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.eventCell)
     }
     
+    /// `UINib(name: "NewEventTitleCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.newEventTitleCell) instead")
+    static func newEventTitleCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.newEventTitleCell)
+    }
+    
     static func eventCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventCell? {
       return R.nib.eventCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventCell
+    }
+    
+    static func newEventTitleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewEventTitleCell? {
+      return R.nib.newEventTitleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewEventTitleCell
     }
     
     fileprivate init() {}
@@ -97,6 +109,17 @@ struct _R: Rswift.Validatable {
       
       func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventCell? {
         return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventCell
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _NewEventTitleCell: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "NewEventTitleCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewEventTitleCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewEventTitleCell
       }
       
       fileprivate init() {}

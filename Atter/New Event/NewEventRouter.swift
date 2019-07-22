@@ -17,4 +17,8 @@ final class NewEventRouter {
     }
 }
 
-extension NewEventRouter {}
+extension NewEventRouter {
+    func dismiss() {
+        viewController?.navigationController?.popViewController(animated: true)
+    }
+}
