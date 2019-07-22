@@ -1,5 +1,5 @@
 //
-//  NewEventViewModel.swift
+//  EventEditViewModel.swift
 //  Atter
 //
 //  Created by Patryk Mieszała on 19/07/2019.
@@ -9,9 +9,12 @@
 import UIKit
 import atter_logic
 
-final class NewEventViewModel: ViewModel {
+final class EventEditViewModel: ViewModel {
     
-    private weak var presenter: NewEventPresenter?
+    private weak var presenter: EventEditPresenter?
+    private let newEventUseCase: SaveEvent
+    private let event: Event?
+    
     private var name: String?
     private var date: Date = Date()
     
@@ -23,11 +26,12 @@ final class NewEventViewModel: ViewModel {
         return df.string(from: date)
     }
     
-    private let newEventUseCase: SaveEvent
-    
-    init(presenter: NewEventPresenter, newEventUseCase: SaveEvent = .init()) {
+    init(presenter: EventEditPresenter,
+         newEventUseCase: SaveEvent = .init(),
+         event: Event?) {
         self.presenter = presenter
         self.newEventUseCase = newEventUseCase
+        self.event = event
     }
     
     func viewDidLoad() {
@@ -68,7 +72,7 @@ final class NewEventViewModel: ViewModel {
     }
 }
 
-private extension NewEventViewModel {
+private extension EventEditViewModel {
     func refreshSaveButtonStatus() {
         let nameValidated = (name?.count ?? 0) > 2
         

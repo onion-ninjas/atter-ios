@@ -1,5 +1,5 @@
 //
-//  NewEventPresenter.swift
+//  EventEditPresenter.swift
 //  Atter
 //
 //  Created by Patryk Mieszała on 19/07/2019.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol NewEventPresenter: AnyObject {
+protocol EventEditPresenter: AnyObject {
     func setSaveButton(enabled: Bool)
     func display(date: String)
     func dismiss()

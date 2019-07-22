@@ -1,5 +1,5 @@
 //
-//  NewEventRouter.swift
+//  EventEditRouter.swift
 //  Atter
 //
 //  Created by Patryk Mieszała on 19/07/2019.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-final class NewEventRouter {
+final class EventEditRouter {
     
-    weak var viewController: NewEventViewController?
+    weak var viewController: EventEditViewController?
     
-    init(viewController: NewEventViewController?) {
+    init(viewController: EventEditViewController?) {
         self.viewController = viewController
     }
 }
 
-extension NewEventRouter {
+extension EventEditRouter {
     func dismiss() {
         viewController?.navigationController?.popViewController(animated: true)
     }

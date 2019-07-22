@@ -16,12 +16,10 @@ struct R: Rswift.Validatable {
     try intern.validate()
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
   struct nib {
     /// Nib `EventCell`.
     static let eventCell = _R.nib._EventCell()
-    /// Nib `NewEventTitleCell`.
-    static let newEventTitleCell = _R.nib._NewEventTitleCell()
     
     /// `UINib(name: "EventCell", in: bundle)`
     @available(*, deprecated, message: "Use UINib(resource: R.nib.eventCell) instead")
@@ -29,18 +27,8 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.eventCell)
     }
     
-    /// `UINib(name: "NewEventTitleCell", in: bundle)`
-    @available(*, deprecated, message: "Use UINib(resource: R.nib.newEventTitleCell) instead")
-    static func newEventTitleCell(_: Void = ()) -> UIKit.UINib {
-      return UIKit.UINib(resource: R.nib.newEventTitleCell)
-    }
-    
     static func eventCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> EventCell? {
       return R.nib.eventCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? EventCell
-    }
-    
-    static func newEventTitleCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewEventTitleCell? {
-      return R.nib.newEventTitleCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewEventTitleCell
     }
     
     fileprivate init() {}
@@ -56,12 +44,17 @@ struct R: Rswift.Validatable {
   
   /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
+    /// Storyboard `EventEdit`.
+    static let eventEdit = _R.storyboard.eventEdit()
     /// Storyboard `EventList`.
     static let eventList = _R.storyboard.eventList()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `NewEvent`.
-    static let newEvent = _R.storyboard.newEvent()
+    
+    /// `UIStoryboard(name: "EventEdit", bundle: ...)`
+    static func eventEdit(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.eventEdit)
+    }
     
     /// `UIStoryboard(name: "EventList", bundle: ...)`
     static func eventList(_: Void = ()) -> UIKit.UIStoryboard {
@@ -71,11 +64,6 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.launchScreen)
-    }
-    
-    /// `UIStoryboard(name: "NewEvent", bundle: ...)`
-    static func newEvent(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.newEvent)
     }
     
     fileprivate init() {}
@@ -114,25 +102,32 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    struct _NewEventTitleCell: Rswift.NibResourceType {
-      let bundle = R.hostingBundle
-      let name = "NewEventTitleCell"
-      
-      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> NewEventTitleCell? {
-        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? NewEventTitleCell
-      }
-      
-      fileprivate init() {}
-    }
-    
     fileprivate init() {}
   }
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try eventEdit.validate()
       try eventList.validate()
       try launchScreen.validate()
-      try newEvent.validate()
+    }
+    
+    struct eventEdit: Rswift.StoryboardResourceType, Rswift.Validatable {
+      let bundle = R.hostingBundle
+      let eventEditViewController = StoryboardViewControllerResource<EventEditViewController>(identifier: "EventEditViewController")
+      let name = "EventEdit"
+      
+      func eventEditViewController(_: Void = ()) -> EventEditViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: eventEditViewController)
+      }
+      
+      static func validate() throws {
+        if #available(iOS 11.0, *) {
+        }
+        if _R.storyboard.eventEdit().eventEditViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'eventEditViewController' could not be loaded from storyboard 'EventEdit' as 'EventEditViewController'.") }
+      }
+      
+      fileprivate init() {}
     }
     
     struct eventList: Rswift.StoryboardResourceType, Rswift.Validatable {
@@ -162,24 +157,6 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if #available(iOS 11.0, *) {
         }
-      }
-      
-      fileprivate init() {}
-    }
-    
-    struct newEvent: Rswift.StoryboardResourceType, Rswift.Validatable {
-      let bundle = R.hostingBundle
-      let name = "NewEvent"
-      let newEventViewController = StoryboardViewControllerResource<NewEventViewController>(identifier: "NewEventViewController")
-      
-      func newEventViewController(_: Void = ()) -> NewEventViewController? {
-        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: newEventViewController)
-      }
-      
-      static func validate() throws {
-        if #available(iOS 11.0, *) {
-        }
-        if _R.storyboard.newEvent().newEventViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'newEventViewController' could not be loaded from storyboard 'NewEvent' as 'NewEventViewController'.") }
       }
       
       fileprivate init() {}

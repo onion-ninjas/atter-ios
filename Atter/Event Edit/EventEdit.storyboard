@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--New Event View Controller-->
+        <!--Event Edit View Controller-->
         <scene sceneID="0j0-Kj-SLO">
             <objects>
-                <viewController storyboardIdentifier="NewEventViewController" id="PAu-uL-a8V" customClass="NewEventViewController" customModule="Atter" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventEditViewController" id="PAu-uL-a8V" customClass="EventEditViewController" customModule="Atter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YcZ-Kz-JzW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,10 +21,10 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="27t-T8-Ly7">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GTt-9h-1C0">
-                                                <rect key="frame" x="16" y="16" width="382" height="30"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="18"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -39,17 +39,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="74X-Ne-R5k">
-                                        <rect key="frame" x="0.0" y="62" width="414" height="62"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="52.5"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K5X-B0-a5m">
-                                                <rect key="frame" x="16" y="16" width="382" height="30"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="20.5"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vs4-1h-hP0">
-                                                <rect key="frame" x="16" y="16" width="382" height="30"/>
+                                                <rect key="frame" x="16" y="16" width="382" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -68,7 +68,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NGd-ZF-gJF">
-                                        <rect key="frame" x="0.0" y="124" width="414" height="694"/>
+                                        <rect key="frame" x="0.0" y="102.5" width="414" height="715.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>

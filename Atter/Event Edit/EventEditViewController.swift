@@ -1,5 +1,5 @@
 //
-//  NewEventViewController.swift
+//  EventEditViewController.swift
 //  Atter
 //
 //  Created by Patryk Mieszała on 19/07/2019.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class NewEventViewController: UIViewController {
+final class EventEditViewController: UIViewController {
     
     @IBOutlet private weak var nameField: UITextField!
     @IBOutlet private weak var dateField: UITextField!
@@ -18,8 +18,8 @@ final class NewEventViewController: UIViewController {
     
     private lazy var saveButton: UIBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: nil, action: nil)
     
-    var viewModel: NewEventViewModel?
-    var router: NewEventRouter?
+    var viewModel: EventEditViewModel?
+    var router: EventEditRouter?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ final class NewEventViewController: UIViewController {
     }
 }
 
-extension NewEventViewController: NewEventPresenter {
+extension EventEditViewController: EventEditPresenter {
     func setSaveButton(enabled: Bool) {
         saveButton.isEnabled = enabled
     }
@@ -47,7 +47,7 @@ extension NewEventViewController: NewEventPresenter {
     }
 }
 
-private extension NewEventViewController {
+private extension EventEditViewController {
     func setupSaveButton() {
         navigationItem.rightBarButtonItem = saveButton
         saveButton.target = viewModel

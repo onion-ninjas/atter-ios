@@ -20,7 +20,7 @@ final class EventListRouter {
 extension EventListRouter {
     @objc
     func navigateToNewEvent() {
-        guard let newEvent = NewEventConfigurator().configureNewEventModule() else {
+        guard let newEvent = EventEditConfigurator().configureNewEventModule(event: nil) else {
             return
         }
         
