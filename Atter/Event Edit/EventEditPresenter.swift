@@ -10,6 +10,7 @@ import Foundation
 
 protocol EventEditPresenter: AnyObject {
     func setSaveButton(enabled: Bool)
+    func display(name: String?)
     func display(date: String)
     func dismiss()
 }

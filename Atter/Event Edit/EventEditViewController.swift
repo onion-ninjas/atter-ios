@@ -38,6 +38,10 @@ extension EventEditViewController: EventEditPresenter {
         saveButton.isEnabled = enabled
     }
     
+    func display(name: String?) {
+        nameField.text = name
+    }
+    
     func display(date: String) {
         dateLabel.text = date
     }

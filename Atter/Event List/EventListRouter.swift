@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import atter_logic
 
 final class EventListRouter {
     
@@ -21,6 +22,14 @@ extension EventListRouter {
     @objc
     func navigateToNewEvent() {
         guard let newEvent = EventEditConfigurator().configureNewEventModule(event: nil) else {
+            return
+        }
+        
+        viewController?.navigationController?.pushViewController(newEvent, animated: true)
+    }
+    
+    func navigateToEventEdit(event: Event) {
+        guard let newEvent = EventEditConfigurator().configureNewEventModule(event: event) else {
             return
         }
         

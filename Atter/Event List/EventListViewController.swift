@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import atter_logic
 
 final class EventListViewController: UIViewController {
     
@@ -34,6 +35,10 @@ extension EventListViewController: EventListPresenter {
     func reloadTableView() {
         tableView.reloadData()
     }
+    
+    func navigate(to event: Event) {
+        router?.navigateToEventEdit(event: event)
+    }
 }
 
 extension EventListViewController: UITableViewDataSource {
@@ -59,6 +64,12 @@ extension EventListViewController: UITableViewDataSource {
     }
 }
 
+extension EventListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel?.didSelect(at: indexPath)
+    }
+}
+
 private extension EventListViewController {
     func setupNewEventButon() {
         let button = UIBarButtonItem(title: "New", style: .plain, target: router, action: #selector(router?.navigateToNewEvent))
@@ -68,6 +79,7 @@ private extension EventListViewController {
     
     func setupTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(R.nib.eventCell)
     }
 }

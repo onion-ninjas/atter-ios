@@ -16,7 +16,7 @@ final class EventEditViewModel: ViewModel {
     private let event: Event?
     
     private var name: String?
-    private var date: Date = Date()
+    private var date: Date
     
     private var dateString: String {
         let df = DateFormatter()
@@ -32,10 +32,13 @@ final class EventEditViewModel: ViewModel {
         self.presenter = presenter
         self.newEventUseCase = newEventUseCase
         self.event = event
+        self.name = event?.name
+        self.date = event?.eventDate.date ?? Date()
     }
     
     func viewDidLoad() {
         refreshSaveButtonStatus()
+        presenter?.display(name: name)
         presenter?.display(date: dateString)
     }
     
@@ -62,7 +65,10 @@ final class EventEditViewModel: ViewModel {
         }
         
         let kDate = KDate(date: date)
-        let event = Event(id: NSUUID().uuidString, name: name, eventDate: kDate, attendeesCount: 0)
+        let id = event?.id ?? NSUUID().uuidString
+        
+        let event = Event(id: id, name: name, eventDate: kDate, attendeesCount: 0)
+        
         guard newEventUseCase.save(event: event) != nil else {
             //TODO: handle error or smth
             return

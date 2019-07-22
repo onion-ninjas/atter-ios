@@ -25,4 +25,9 @@ final class EventListViewModel: ViewModel {
         events = getEventUseCase.invoke()
         presenter?.reloadTableView()
     }
+    
+    func didSelect(at indexPath: IndexPath) {
+        let event = events[indexPath.row]
+        presenter?.navigate(to: event)
+    }
 }
