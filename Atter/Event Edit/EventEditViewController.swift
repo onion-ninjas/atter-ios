@@ -44,8 +44,11 @@ extension EventEditViewController: EventEditPresenter {
         nameField.text = name
     }
     
-    func displayDate(date: String?) {
-        dateLabel.text = date
+    func displayDate(kdate: KDate) {
+        let df = DateFormatter()
+        df.dateStyle = .full
+        
+        dateLabel.text = df.string(from: kdate.date)
     }
     
     func dismiss() {
