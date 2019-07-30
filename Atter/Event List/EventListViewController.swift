@@ -27,16 +27,16 @@ final class EventListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel?.viewWillAppear()
+        viewModel?.refresh()
     }
 }
 
 extension EventListViewController: EventListPresenter {
-    func reloadTableView() {
+    func reloadList() {
         tableView.reloadData()
     }
     
-    func navigate(to event: Event) {
+    func navigateTo(event: Event) {
         router?.navigateToEventEdit(event: event)
     }
 }
@@ -66,7 +66,7 @@ extension EventListViewController: UITableViewDataSource {
 
 extension EventListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel?.didSelect(at: indexPath)
+        viewModel?.didSelectRowAt(index: Int32(indexPath.row))
     }
 }
 
