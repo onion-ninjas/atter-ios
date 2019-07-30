@@ -372,7 +372,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/atter-logic/atter-logic/build/xcode-frameworks\"\n./gradlew :atter-logic:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "cd \"$SRCROOT/atter-logic\"\n./gradlew :atter-logic:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
 		8FD7C8E822E21C060019B532 /* Run R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
