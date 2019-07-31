@@ -27,7 +27,6 @@
 		8FD7C8F722E220060019B532 /* EventList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FD7C8F622E220060019B532 /* EventList.storyboard */; };
 		8FD7C8FF22E22F290019B532 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8FD22E22F290019B532 /* EventCell.swift */; };
 		8FD7C90022E22F290019B532 /* EventCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8FD7C8FE22E22F290019B532 /* EventCell.xib */; };
-		8FD7C90222E233F00019B532 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C90122E233F00019B532 /* ViewModel.swift */; };
 		E314BD30BBAF1CE6474593C7 /* Pods_Atter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3B08D871FB59595CB29583 /* Pods_Atter.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,7 +68,6 @@
 		8FD7C8F622E220060019B532 /* EventList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventList.storyboard; sourceTree = "<group>"; };
 		8FD7C8FD22E22F290019B532 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		8FD7C8FE22E22F290019B532 /* EventCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCell.xib; sourceTree = "<group>"; };
-		8FD7C90122E233F00019B532 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		984D26E540D2C3B37C439E9A /* Pods-Atter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Atter.debug.xcconfig"; path = "Target Support Files/Pods-Atter/Pods-Atter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				8F74565722E1B1AA003B9C1D /* Delegates */,
-				8FD7C90122E233F00019B532 /* ViewModel.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -414,7 +411,6 @@
 				8FD7C8EB22E21C880019B532 /* R.generated.swift in Sources */,
 				8FD7C8FF22E22F290019B532 /* EventCell.swift in Sources */,
 				8FD7C8E522E21B050019B532 /* AtterTabBarRouter.swift in Sources */,
-				8FD7C90222E233F00019B532 /* ViewModel.swift in Sources */,
 				8FD7C8EE22E21D080019B532 /* RootRouter.swift in Sources */,
 				8FD7C8F422E21FFD0019B532 /* EventListViewController.swift in Sources */,
 				8FD7C8E722E21B050019B532 /* AtterTabBarConfigurator.swift in Sources */,
