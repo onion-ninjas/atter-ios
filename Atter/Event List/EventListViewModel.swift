@@ -13,20 +13,15 @@ final class EventListViewModel: ViewModel {
     private(set) var events: [Event]
     
     private weak var presenter: EventListPresenter?
+    private let database = AtterDatabase()
     
     init(presenter: EventListPresenter) {
         self.presenter = presenter
-        events = (1..<100).map {
-            Event(
-                id: "\($0)",
-                name: "Event \($0)",
-                date: Date(),
-                attendees: []
-            )
-        }
+        self.events = database.getEvents()
     }
     
     func viewWillAppear() {
+        events = database.getEvents()
         presenter?.reloadList()
     }
     

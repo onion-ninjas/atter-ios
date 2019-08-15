@@ -8,10 +8,14 @@
 
 import Foundation
 
-struct Event {
+struct Event: Equatable {
     let
     id: String,
     name: String,
     date: Date,
     attendees: [Person]
+}
+
+func == (lhs: Event, rhs: Event) -> Bool {
+    return lhs.id == rhs.id
 }

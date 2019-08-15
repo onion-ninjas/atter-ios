@@ -10,11 +10,13 @@ import UIKit
 
 final class EventEditViewModel: ViewModel {
     
-    private weak var presenter: EventEditPresenter?
     private var id: String?
     private var name: String
     private var date: Date
     private var attendees: [Person]
+    
+    private weak var presenter: EventEditPresenter?
+    private let database = AtterDatabase()
     
     init(presenter: EventEditPresenter, event: Event?) {
         self.presenter = presenter
@@ -41,7 +43,11 @@ final class EventEditViewModel: ViewModel {
     
     @objc
     func save() {
-        //TODO: this
+        let event = Event(id: id ?? NSUUID().uuidString,
+                          name: name,
+                          date: date,
+                          attendees: attendees)
+        database.save(event: event)
         presenter?.dismiss()
     }
 }
