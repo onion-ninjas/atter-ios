@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import atter_logic
 
 final class EventEditConfigurator {
     func configureNewEventModule(event: Event?) -> EventEditViewController? {
@@ -15,7 +14,7 @@ final class EventEditConfigurator {
             return nil
         }
         let router: EventEditRouter = EventEditRouter(viewController: viewController)
-        let viewModel: EventEditViewModel = EventEditViewModel.Companion().instance(presenter: viewController, event: event)
+        let viewModel: EventEditViewModel = EventEditViewModel(presenter: viewController, event: event)
         
         viewController.router = router
         viewController.viewModel = viewModel

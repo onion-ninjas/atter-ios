@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import atter_logic
 
 final class EventListConfigurator {
     func configureEventListModule() -> UINavigationController? {
@@ -15,7 +14,7 @@ final class EventListConfigurator {
             return nil
         }
         let router: EventListRouter = EventListRouter(viewController: viewController)
-        let viewModel: EventListViewModel = EventListViewModel.Companion().instance(presenter: viewController)
+        let viewModel: EventListViewModel = EventListViewModel(presenter: viewController)
         
         viewController.router = router
         viewController.viewModel = viewModel

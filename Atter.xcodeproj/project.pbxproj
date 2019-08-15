@@ -10,12 +10,18 @@
 		8F74564022E1B050003B9C1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F74563F22E1B050003B9C1D /* AppDelegate.swift */; };
 		8F74564722E1B051003B9C1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F74564622E1B051003B9C1D /* Assets.xcassets */; };
 		8F74564A22E1B051003B9C1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F74564822E1B051003B9C1D /* LaunchScreen.storyboard */; };
-		8F8E659C22E24BA200881D5C /* atter_logic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E659B22E24BA100881D5C /* atter_logic.framework */; };
-		8F8E659D22E24BA200881D5C /* atter_logic.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8F8E659B22E24BA100881D5C /* atter_logic.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8F8E65A722E24F3600881D5C /* EventEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E65A222E24F3600881D5C /* EventEditRouter.swift */; };
 		8F8E65A822E24F3600881D5C /* EventEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E65A322E24F3600881D5C /* EventEditViewController.swift */; };
 		8F8E65AA22E24F3600881D5C /* EventEditConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8E65A522E24F3600881D5C /* EventEditConfigurator.swift */; };
 		8F8E65AC22E24F4300881D5C /* EventEdit.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F8E65AB22E24F4300881D5C /* EventEdit.storyboard */; };
+		8FAE1CD22305969300D14BD3 /* EventEditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CD02305969300D14BD3 /* EventEditPresenter.swift */; };
+		8FAE1CD32305969400D14BD3 /* EventEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CD12305969300D14BD3 /* EventEditViewModel.swift */; };
+		8FAE1CD7230596CF00D14BD3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CD6230596CF00D14BD3 /* Event.swift */; };
+		8FAE1CDA2305970500D14BD3 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CD92305970500D14BD3 /* Person.swift */; };
+		8FAE1CDD2305973200D14BD3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CDC2305973200D14BD3 /* ViewModel.swift */; };
+		8FAE1CE1230597BA00D14BD3 /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CE0230597BA00D14BD3 /* Presenter.swift */; };
+		8FAE1CE42305993600D14BD3 /* EventListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CE22305993600D14BD3 /* EventListPresenter.swift */; };
+		8FAE1CE52305993600D14BD3 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FAE1CE32305993600D14BD3 /* EventListViewModel.swift */; };
 		8FD7C8E522E21B050019B532 /* AtterTabBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E222E21B050019B532 /* AtterTabBarRouter.swift */; };
 		8FD7C8E622E21B050019B532 /* AtterTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E322E21B050019B532 /* AtterTabBarViewController.swift */; };
 		8FD7C8E722E21B050019B532 /* AtterTabBarConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD7C8E422E21B050019B532 /* AtterTabBarConfigurator.swift */; };
@@ -37,7 +43,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				8F8E659D22E24BA200881D5C /* atter_logic.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -52,11 +57,18 @@
 		8F74564622E1B051003B9C1D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8F74564922E1B051003B9C1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F74564B22E1B051003B9C1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8F8E659B22E24BA100881D5C /* atter_logic.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = atter_logic.framework; path = "atter-logic/atter-logic/build/xcode-frameworks/atter_logic.framework"; sourceTree = "<group>"; };
 		8F8E65A222E24F3600881D5C /* EventEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditRouter.swift; sourceTree = "<group>"; };
 		8F8E65A322E24F3600881D5C /* EventEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditViewController.swift; sourceTree = "<group>"; };
 		8F8E65A522E24F3600881D5C /* EventEditConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditConfigurator.swift; sourceTree = "<group>"; };
 		8F8E65AB22E24F4300881D5C /* EventEdit.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EventEdit.storyboard; sourceTree = "<group>"; };
+		8FAE1CD02305969300D14BD3 /* EventEditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditPresenter.swift; sourceTree = "<group>"; };
+		8FAE1CD12305969300D14BD3 /* EventEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditViewModel.swift; sourceTree = "<group>"; };
+		8FAE1CD6230596CF00D14BD3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		8FAE1CD92305970500D14BD3 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		8FAE1CDC2305973200D14BD3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		8FAE1CE0230597BA00D14BD3 /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
+		8FAE1CE22305993600D14BD3 /* EventListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListPresenter.swift; sourceTree = "<group>"; };
+		8FAE1CE32305993600D14BD3 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		8FD7C8E222E21B050019B532 /* AtterTabBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarRouter.swift; sourceTree = "<group>"; };
 		8FD7C8E322E21B050019B532 /* AtterTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarViewController.swift; sourceTree = "<group>"; };
 		8FD7C8E422E21B050019B532 /* AtterTabBarConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtterTabBarConfigurator.swift; sourceTree = "<group>"; };
@@ -76,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F8E659C22E24BA200881D5C /* atter_logic.framework in Frameworks */,
 				E314BD30BBAF1CE6474593C7 /* Pods_Atter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +115,6 @@
 		8F74563322E1B050003B9C1D = {
 			isa = PBXGroup;
 			children = (
-				8F8E659B22E24BA100881D5C /* atter_logic.framework */,
 				8F74563E22E1B050003B9C1D /* Atter */,
 				8F74563D22E1B050003B9C1D /* Products */,
 				05A2C2869DB0ADC05ABE9CAF /* Pods */,
@@ -123,6 +133,7 @@
 		8F74563E22E1B050003B9C1D /* Atter */ = {
 			isa = PBXGroup;
 			children = (
+				8FAE1CD4230596C100D14BD3 /* Models */,
 				8F8E65A022E24F2500881D5C /* Event Edit */,
 				8FD7C8EF22E21FEE0019B532 /* Event List */,
 				8FD7C8EC22E21CE40019B532 /* Root */,
@@ -155,6 +166,8 @@
 		8F74565622E1B1A4003B9C1D /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				8FAE1CDB2305972600D14BD3 /* Protocols */,
+				8FAE1CCD23058FC800D14BD3 /* Extensions */,
 				8F74565722E1B1AA003B9C1D /* Delegates */,
 			);
 			path = Shared;
@@ -175,8 +188,51 @@
 				8F8E65A322E24F3600881D5C /* EventEditViewController.swift */,
 				8F8E65A522E24F3600881D5C /* EventEditConfigurator.swift */,
 				8F8E65AB22E24F4300881D5C /* EventEdit.storyboard */,
+				8FAE1CD02305969300D14BD3 /* EventEditPresenter.swift */,
+				8FAE1CD12305969300D14BD3 /* EventEditViewModel.swift */,
 			);
 			path = "Event Edit";
+			sourceTree = "<group>";
+		};
+		8FAE1CCD23058FC800D14BD3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8FAE1CD4230596C100D14BD3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8FAE1CD8230596FA00D14BD3 /* Person */,
+				8FAE1CD5230596C700D14BD3 /* Event */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8FAE1CD5230596C700D14BD3 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				8FAE1CD6230596CF00D14BD3 /* Event.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		8FAE1CD8230596FA00D14BD3 /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				8FAE1CD92305970500D14BD3 /* Person.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		8FAE1CDB2305972600D14BD3 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8FAE1CDC2305973200D14BD3 /* ViewModel.swift */,
+				8FAE1CE0230597BA00D14BD3 /* Presenter.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		8FD7C8D322E21A980019B532 /* Tab Bar */ = {
@@ -213,6 +269,8 @@
 				8FD7C8F122E21FFD0019B532 /* EventListViewController.swift */,
 				8FD7C8F222E21FFD0019B532 /* EventListConfigurator.swift */,
 				8FD7C8F622E220060019B532 /* EventList.storyboard */,
+				8FAE1CE22305993600D14BD3 /* EventListPresenter.swift */,
+				8FAE1CE32305993600D14BD3 /* EventListViewModel.swift */,
 			);
 			path = "Event List";
 			sourceTree = "<group>";
@@ -234,7 +292,6 @@
 			buildConfigurationList = 8F74564E22E1B051003B9C1D /* Build configuration list for PBXNativeTarget "Atter" */;
 			buildPhases = (
 				870EFA60EB091353C50386AF /* [CP] Check Pods Manifest.lock */,
-				8F8E659F22E24BC900881D5C /* Run gradlew */,
 				8FD7C8E822E21C060019B532 /* Run R.swift */,
 				8F74563822E1B050003B9C1D /* Sources */,
 				8F74563922E1B050003B9C1D /* Frameworks */,
@@ -341,24 +398,6 @@
 			shellPath = /bin/sh;
 			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
 		};
-		8F8E659F22E24BC900881D5C /* Run gradlew */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Run gradlew";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/atter-logic\"\n./gradlew :atter-logic:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
-		};
 		8FD7C8E822E21C060019B532 /* Run R.swift */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -404,16 +443,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F74564022E1B050003B9C1D /* AppDelegate.swift in Sources */,
+				8FAE1CE1230597BA00D14BD3 /* Presenter.swift in Sources */,
+				8FAE1CD32305969400D14BD3 /* EventEditViewModel.swift in Sources */,
+				8FAE1CD22305969300D14BD3 /* EventEditPresenter.swift in Sources */,
 				8FD7C8E622E21B050019B532 /* AtterTabBarViewController.swift in Sources */,
 				8F8E65AA22E24F3600881D5C /* EventEditConfigurator.swift in Sources */,
 				8F8E65A822E24F3600881D5C /* EventEditViewController.swift in Sources */,
 				8FD7C8F522E21FFD0019B532 /* EventListConfigurator.swift in Sources */,
 				8FD7C8EB22E21C880019B532 /* R.generated.swift in Sources */,
+				8FAE1CD7230596CF00D14BD3 /* Event.swift in Sources */,
 				8FD7C8FF22E22F290019B532 /* EventCell.swift in Sources */,
+				8FAE1CDD2305973200D14BD3 /* ViewModel.swift in Sources */,
+				8FAE1CE52305993600D14BD3 /* EventListViewModel.swift in Sources */,
 				8FD7C8E522E21B050019B532 /* AtterTabBarRouter.swift in Sources */,
 				8FD7C8EE22E21D080019B532 /* RootRouter.swift in Sources */,
 				8FD7C8F422E21FFD0019B532 /* EventListViewController.swift in Sources */,
 				8FD7C8E722E21B050019B532 /* AtterTabBarConfigurator.swift in Sources */,
+				8FAE1CDA2305970500D14BD3 /* Person.swift in Sources */,
+				8FAE1CE42305993600D14BD3 /* EventListPresenter.swift in Sources */,
 				8FD7C8F322E21FFD0019B532 /* EventListRouter.swift in Sources */,
 				8F8E65A722E24F3600881D5C /* EventEditRouter.swift in Sources */,
 			);

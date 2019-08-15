@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import atter_logic
 
 final class EventListViewController: UIViewController {
     
@@ -27,7 +26,7 @@ final class EventListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel?.refresh()
+        viewModel?.viewWillAppear()
     }
 }
 
@@ -66,7 +65,7 @@ extension EventListViewController: UITableViewDataSource {
 
 extension EventListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel?.didSelectRowAt(index: Int32(indexPath.row))
+        viewModel?.didSelectRow(atIndex: indexPath.row)
     }
 }
 

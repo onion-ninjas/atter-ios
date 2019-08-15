@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import atter_logic
 
 final class EventListRouter {
     

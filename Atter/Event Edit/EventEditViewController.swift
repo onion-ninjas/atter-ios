@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import atter_logic
 
 final class EventEditViewController: UIViewController {
     
@@ -30,25 +29,24 @@ final class EventEditViewController: UIViewController {
         setupNameField()
         setupDateField()
         
-        viewModel?.onStart()
+        viewModel?.viewDidLoad()
     }
 }
 
 extension EventEditViewController: EventEditPresenter {
-    
-    func setSaveButton(enabled: Bool) {
-        saveButton.isEnabled = enabled
-    }
-    
-    func displayName(name: String?) {
+    func display(name: String) {
         nameField.text = name
     }
     
-    func displayDate(kdate: KDate) {
+    func display(date: Date) {
         let df = DateFormatter()
         df.dateStyle = .full
         
-        dateLabel.text = df.string(from: kdate.date)
+        dateLabel.text = df.string(from: date)
+    }
+    
+    func setSaveButton(enabled: Bool) {
+        saveButton.isEnabled = enabled
     }
     
     func dismiss() {
@@ -77,12 +75,11 @@ private extension EventEditViewController {
     
     @objc
     func didChange(nameField: UITextField) {
-        viewModel?.didChangeName(name: nameField.text ?? "")
+        viewModel?.didChange(name: nameField.text ?? "")
     }
     
     @objc
     func didChange(dateField: UIDatePicker) {
-        let kDate = KDate(date: dateField.date)
-        viewModel?.didChangeDate(date: kDate)
+        viewModel?.didChange(date: dateField.date)
     }
 }

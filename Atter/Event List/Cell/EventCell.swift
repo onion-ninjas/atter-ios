@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import atter_logic
 
 class EventCell: UITableViewCell {
     
@@ -22,7 +21,7 @@ class EventCell: UITableViewCell {
         df.dateStyle = .full
         df.timeStyle = .none
         
-        dateLabel.text = df.string(from: event.eventDate.date)
-        attendeesLabel.text = "number of attendees: \(event.attendeesCount)"
+        dateLabel.text = df.string(from: event.date)
+        attendeesLabel.text = "number of attendees: \(event.attendees.count)"
     }
 }
